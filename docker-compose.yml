@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nfe-visual-dev:
+    image: node:10-slim
+    container_name: produtos-visual-dev
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+    command:
+      sh -c 'npm run serve'
+    ports:
+      - "8080:8080"
+    environment:
+      - VUE_APP_API=http://localhost:8000 # endereço do backend produto.
+      - VUE_APP_AUTH_JWT=http://localhost
