@@ -37,17 +37,13 @@
                       {{( props.item.situacao == 'd' ? 'Disponivel' : 'Indisponivel' )}}
                     </td>
                     <td class="justify-center layout px-0">
-                      <v-tooltip bottom>
-                        <v-btn
-                          slot="activator"
-                          flat
-                          icon
-                          @click="showItem(props.item)"
-                        >
-                          <v-icon>visibility</v-icon>
-                        </v-btn>
-                        <span>Visualizar Dados</span>
-                      </v-tooltip>
+                      <v-icon
+                        small
+                        class="mr-2"
+                        @click="showItem(props.item)"
+                      >
+                        visibility
+                      </v-icon>
                         <v-icon
                                 small
                                 class="mr-2"
@@ -242,15 +238,17 @@ export default {
   computed: {
     ...mapGetters({
       listarPedidosGetter: 'pedido/listarPedidosGetter',
+      excluirPedidosGetter: 'pedido/excluirPedidosGetter',
     }),
   },
   methods: {
     ...mapActions({
       listarPedidosAction: 'pedido/listarPedidosAction',
+      excluirPedidosAction: 'pedido/excluirPedidosAction',
     }),
     deletarItem() {
       this.dialogExcluir = false;
-      this.excluirProdutosAction(this.itemIdParaExclusao);
+      this.excluirPedidosAction(this.itemIdParaExclusao);
     },
     editItem(item) {
       this.editedItem = Object.assign({}, item);
