@@ -10,7 +10,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "nota" */ './produto/views/ListarProdutos'),
   },
   {
-    path: '/produto/cadastrar',
+    path: '/produto-cadastrar',
     name: 'CadastrarProduto',
     component: () => import(/* webpackChunkName: "notas" */ './produto/views/CadastrarProduto'),
   },
@@ -28,6 +28,11 @@ const routes = [
     path: '/pedidos',
     name: 'ListarPedidos',
     component: () => import(/* webpackChunkName: "Home" */ './pedido/views/ListarPedidos'),
+  },
+  {
+    path: '/pedido-cadastrar',
+    name: 'CadastrarPedido',
+    component: () => import(/* webpackChunkName: "Home" */ './pedido/views/CadastrarPedido'),
   },
 ];
 

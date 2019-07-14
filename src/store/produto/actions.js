@@ -13,7 +13,7 @@ export const listarProdutosAction = ({ commit }) => {
 };
 
 export const excluirProdutosAction = async ({ commit }, id) => {
-  console.log(id);
+  console.log(' produto', id);
   const result = await api.syncExcluirProduto(id)
     .then(() => {
       commit(types.SYNC_EXCLUIR_PRODUTO, id);

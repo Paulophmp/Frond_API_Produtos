@@ -5,7 +5,14 @@
         </div>
         <v-container v-else>
           <div class="text-xs-right">
-            <v-btn round color="primary" dark>Cadastrar Pedido</v-btn>
+            <v-btn
+              round
+              color="primary"
+              dark
+              to="/pedido-cadastrar"
+            >
+              Cadastrar Pedido
+            </v-btn>
           </div>
             <v-card>
                 <v-container fluid>

@@ -27,7 +27,6 @@
           v-model="valid"
           lazy-validation
         >
-          <input type="hidden" name="_token" :value="csrf">
           <v-container>
             <v-layout>
               <v-flex
@@ -47,10 +46,10 @@
                 md6
               >
                 <v-text-field
-                  v-model="cadastrar.valorUnitario"
+                  v-model.lazy="cadastrar.valorUnitario"
+                  v-money="money"
                   :rules="valorRules"
                   label="Valor"
-                  type="number"
                   required
                 ></v-text-field>
               </v-flex>
@@ -107,6 +106,14 @@ export default {
   name: 'CadastrarProduto',
   data() {
     return {
+      money: {
+        decimal: ',',
+        thousands: '.',
+        prefix: '',
+        suffix: '',
+        precision: 2,
+        masked: false, /* doesn't work with directive */
+      },
       loading: false,
       statusSnackBar: '',
       snackbar: false,
