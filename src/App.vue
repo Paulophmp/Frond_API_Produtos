@@ -61,13 +61,21 @@
           </v-list>
           <v-divider/><v-divider/>
           <v-list>
-            <v-list-tile :to="'/produtos'" >
-              <v-switch
-                label="Tema Dark"
-                v-model="isDark"
-              >
-              </v-switch>
+            <v-list-tile>
+              <v-list-tile-action>
+                <v-switch
+                  color="indigo"
+                  v-model="isDark"
+                >
+                </v-switch>
+              </v-list-tile-action>
+
+              <v-list-tile-content>
+                <v-list-tile-title>Modo noturno</v-list-tile-title>
+              </v-list-tile-content>
             </v-list-tile>
+
+
             <v-list-tile :to="'/produtos'" >
               <v-list-tile-action>
                 <v-icon color="indigo">list</v-icon>
