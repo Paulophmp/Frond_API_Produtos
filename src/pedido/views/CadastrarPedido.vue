@@ -38,7 +38,8 @@
                   item-text="nome"
                   item-value="id"
                   label="Produto =)"
-                  @change="searchProdutos()"
+                  @keyup="searchProdutos"
+                  @change="searchProdutos($event)"
                 ></v-select>
               </v-flex>
 
@@ -47,7 +48,7 @@
                 md6
               >
                 <v-text-field
-                  v-model="cadastrar.solicitante"
+                  v-model="items.quantidadeEstoque"
                   :rules="nomeRules"
                   label="Quantidade"
                   required
@@ -58,7 +59,7 @@
                 md6
               >
                 <v-text-field
-                  v-model="cadastrar.solicitante"
+                  v-model="items.valorUnitario"
                   :rules="nomeRules"
                   label="Valor Unitario"
                   disabled
@@ -92,8 +93,9 @@
               </v-flex>
             </v-layout>
 
-{{listarProdutosGetter}}
-<!--cep-->
+              {{listarProdutosGetter}} <br><br>
+            items: {{ items.valorUnitario }}<br><br>
+            <!--cep-->
             <v-layout>
               <v-flex
                 xs12
@@ -284,6 +286,9 @@ export default {
     ...mapGetters({
       listarProdutosGetter: 'produto/listarProdutosGetter',
       nomeProdutosGetter: 'produto/leanListarProdutosGetter',
+      totalPedidos() {
+        return this.items.valorUnitario * this.items.quantidadeEstoque;
+      },
     }),
   },
   methods: {
@@ -326,12 +331,10 @@ export default {
           .catch(error => console.log(error));
       }
     },
-    searchProdutos(a) {
-      console.log(a);
-      axios.get('http://localhost:8000/produto')
+    searchProdutos(id) {
+      axios.get(`http://localhost:8000/produto/${id}`)
         .then((response) => {
           this.items = response.data;
-          this.itemsId = response.data.id;
         })
         .catch(error => console.log(error));
     },
