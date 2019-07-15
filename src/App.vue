@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :dark="isDark">
     <v-toolbar
         color="blue darken-3"
         dark
@@ -62,6 +62,13 @@
           <v-divider/><v-divider/>
           <v-list>
             <v-list-tile :to="'/produtos'" >
+              <v-switch
+                label="Tema Dark"
+                v-model="isDark"
+              >
+              </v-switch>
+            </v-list-tile>
+            <v-list-tile :to="'/produtos'" >
               <v-list-tile-action>
                 <v-icon color="indigo">list</v-icon>
               </v-list-tile-action>
@@ -77,7 +84,7 @@
               </v-list-tile-action>
 
               <v-list-tile-content>
-                <v-list-tile-title>Listar pedidos</v-list-tile-title>
+                <v-list-tile-title>Listar Pedidos</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -97,6 +104,7 @@ export default {
   name: 'App',
   data() {
     return {
+      isDark: false,
     };
   },
 };
