@@ -12,6 +12,18 @@ export const listarPedidosAction = ({ commit }) => {
     });
 };
 
+export const excluirPedidosAction = async ({ commit }, id) => {
+  console.log(id);
+  const result = await api.syncExcluirPedido(id)
+    .then(() => {
+      commit(types.SYNC_EXCLUIR_PEDIDO, id);
+    }).catch((e) => {
+      // console.log(e)
+      // throw new TypeError(e, 'error', 10);
+    });
+  return result;
+};
+
 // export const excluirProdutosAction = async ({ commit }, id) => {
 //   console.log(id);
 //   const result = await api.syncExcluirProduto(id)

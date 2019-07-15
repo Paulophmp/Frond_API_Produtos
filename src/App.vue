@@ -43,47 +43,45 @@
                   class="ma-0 hidden-sm-and-down">arrow_drop_down</v-icon>
         </v-btn>
 
-        <v-btn class="hidden-sm-and-down" flat>Tem de tudo</v-btn>
-<!--        <v-card style="width: 360px;">-->
-<!--          <v-list>-->
-<!--            <v-list-tile avatar>-->
-<!--              <v-list-tile-avatar>-->
-<!--                <v-avatar-->
-<!--                        color="blue darken-3"-->
-<!--                        size="35px"-->
-<!--                        class="mr-1 left">-->
-<!--                    <span class="white&#45;&#45;text headline">{{ primeiraLetraNomeUsuario }}</span>-->
-<!--                </v-avatar>-->
-<!--              </v-list-tile-avatar>-->
-<!--              <v-list-tile-content>-->
-<!--&lt;!&ndash;                <v-list-tile-title> {{ (this.usuarioGetter ? this.usuarioGetter.data.auth.usu_nome : '') }} </v-list-tile-title>&ndash;&gt;-->
-<!--&lt;!&ndash;                <v-list-tile-sub-title>{{ (this.usuarioGetter ? this.usuarioGetter.data.auth.usu_identificacao : '' ) | cpf }}</v-list-tile-sub-title>&ndash;&gt;-->
-<!--              </v-list-tile-content>-->
-<!--            </v-list-tile>-->
-<!--          </v-list>-->
-<!--          <v-divider/><v-divider/>-->
-<!--          <v-list>-->
-<!--            <v-list-tile :to="'/produto/admin/certificado'" >-->
-<!--              <v-list-tile-action>-->
-<!--                <v-icon color="indigo">note_add</v-icon>-->
-<!--              </v-list-tile-action>-->
+        <v-card style="width: 360px;">
+          <v-list>
+            <v-list-tile avatar>
+              <v-list-tile-avatar>
+                <v-avatar
+                        color="blue darken-3"
+                        size="35px"
+                        class="mr-1 left">
+                    <span class="white--text headline">P</span>
+                </v-avatar>
+              </v-list-tile-avatar>
+              <v-list-tile-content>
+                <v-list-tile-title> Paulo Henrique Mendes </v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+          <v-divider/><v-divider/>
+          <v-list>
+            <v-list-tile :to="'/produtos'" >
+              <v-list-tile-action>
+                <v-icon color="indigo">list</v-icon>
+              </v-list-tile-action>
 
-<!--              <v-list-tile-content>-->
-<!--                <v-list-tile-title>Cadastrar Certificado</v-list-tile-title>-->
-<!--              </v-list-tile-content>-->
-<!--            </v-list-tile>-->
+              <v-list-tile-content>
+                <v-list-tile-title>Listar Produtos</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
 
-<!--            <v-list-tile  :to="'/produto/admin/listar-certificados'">-->
-<!--              <v-list-tile-action>-->
-<!--                <v-icon color="indigo">list</v-icon>-->
-<!--              </v-list-tile-action>-->
+            <v-list-tile  :to="'/pedidos'">
+              <v-list-tile-action>
+                <v-icon color="indigo">list</v-icon>
+              </v-list-tile-action>
 
-<!--              <v-list-tile-content>-->
-<!--                <v-list-tile-title>Listar Certificados</v-list-tile-title>-->
-<!--              </v-list-tile-content>-->
-<!--            </v-list-tile>-->
-<!--          </v-list>-->
-<!--        </v-card>-->
+              <v-list-tile-content>
+                <v-list-tile-title>Listar pedidos</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-card>
       </v-menu>
     </v-toolbar>
 

@@ -4,6 +4,16 @@
             <carregando :text="'Lista de certificados'"/>
         </div>
         <v-container v-else>
+          <div class="text-xs-right">
+            <v-btn
+              round
+              color="primary"
+              dark
+              to="/produto-cadastrar"
+            >
+              Cadastrar Produto
+            </v-btn>
+          </div>
             <v-card>
                 <v-container fluid>
                     <v-layout
@@ -28,9 +38,9 @@
             >
                 <template v-slot:items="props">
                     <td class="text-xs-left">{{ props.item.nome }}</td>
-                    <td class="text-xs-left">{{ props.item.quantidadeEstoque }}</td>
-                    <td class="text-xs-center">{{ props.item.valorUnitario }}</td>
-                    <td class="text-xs-center">
+                    <td class="text-xs-right">{{ props.item.quantidadeEstoque }}</td>
+                    <td class="text-xs-right">{{ props.item.valorUnitario }}</td>
+                    <td class="text-xs-left">
                       {{( props.item.situacao == 'd' ? 'Disponivel' : 'Indisponivel' )}}
                     </td>
                     <td class="justify-center layout px-0">
@@ -98,14 +108,14 @@ export default {
           value: 'nome',
         },
         {
+          text: 'Quantidade em estoque',
+          align: 'left',
+          value: 'quantidadeEstoque',
+        },
+        {
           text: 'Valor unitário',
           align: 'left',
           value: 'valorUnitario',
-        },
-        {
-          text: 'Quantidade em estoque',
-          align: 'center',
-          value: 'quantidadeEstoque',
         },
         {
           text: 'Situação',
