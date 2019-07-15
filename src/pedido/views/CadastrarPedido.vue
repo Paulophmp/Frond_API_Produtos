@@ -33,11 +33,11 @@
                 xs12
                 md6>
                 <v-select
-                  v-model="tipobusca"
+                  v-model="cadastrar.nome"
                   :items="listarProdutosGetter"
                   item-text="nome"
                   item-value="id"
-                  label="Produto =)"
+                  label="Produto"
                   @keyup="searchProdutos"
                   @change="searchProdutos($event)"
                 ></v-select>
@@ -93,7 +93,7 @@
               </v-flex>
             </v-layout>
 
-              {{listarProdutosGetter}} <br><br>
+              {{ listarProdutosGetter }} <br><br>
             items: {{ items.valorUnitario }}<br><br>
             <!--cep-->
             <v-layout>
@@ -246,7 +246,6 @@ export default {
       selected: '',
       tipobusca: '',
       items: [],
-      itemsId: '',
       loading: false,
       statusSnackBar: '',
       snackbar: false,
@@ -260,6 +259,8 @@ export default {
         solicitante: '',
         despachante: '',
         situacao: 'd',
+        valorUnitario: '',
+        quantidadeEstoque: '',
       },
       valid: true,
       data: null,
@@ -293,14 +294,15 @@ export default {
   },
   methods: {
     ...mapActions({
-      cadastrarProdutosAction: 'produto/cadastrarProdutosAction',
+      cadastrarPedidoAction: 'pedido/cadastrarPedidoAction',
       listarProdutosAction: 'produto/listarProdutosAction',
+      cadastrarPedidosGetter: 'pedido/cadastrarPedidosGetter',
     }),
     submit() {
       console.log('aaaadsdsd', this.cadastrar);
       if (this.$refs.form.validate()) {
         this.loading = true;
-        this.cadastrarProdutosAction(this.cadastrar).then(() => {
+        this.cadastrarPedidoAction(this.cadastrar).then(() => {
           this.loading = false;
         });
         this.menssageSuccess();
