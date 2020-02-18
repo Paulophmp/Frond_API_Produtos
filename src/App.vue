@@ -10,15 +10,6 @@
     <v-toolbar-title style="width: 300px" class="ml-0 pl-3" to="/">
         <v-btn class="hidden-sm-and-down" flat>Tem de tudo</v-btn>
     </v-toolbar-title>
-<!--        <v-text-field-->
-<!--                append-icon="search"-->
-<!--                label="Search"-->
-<!--                solo-inverted-->
-<!--                flat-->
-<!--                class="mx-3"-->
-<!--                @keyup.enter="search(searchNota)"-->
-<!--                v-model="searchNota"-->
-<!--        ></v-text-field>-->
     <v-spacer></v-spacer>
       <v-menu
               transition="slide-y-transition"
