@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.9",
-    "moment-timezone": "^0.5.25",
+    "moment-timezone": "^0.5.35",
     "register-service-worker": "^1.6.2",
     "v-money": "^0.8.1",
     "vue": "^2.6.6",
