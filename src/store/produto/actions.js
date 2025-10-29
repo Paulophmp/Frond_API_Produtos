@@ -7,8 +7,6 @@ export const listarProdutosAction = ({ commit }) => {
       const { data } = response;
       commit(types.SYNC_LISTAR_PRODUTOS, data);
     }).catch((e) => {
-      // console.log(e)
-      // throw new TypeError(e, 'error', 10);
     });
 };
 
@@ -18,8 +16,6 @@ export const excluirProdutosAction = async ({ commit }, id) => {
     .then(() => {
       commit(types.SYNC_EXCLUIR_PRODUTO, id);
     }).catch((e) => {
-      // console.log(e)
-      // throw new TypeError(e, 'error', 10);
     });
   return result;
 };
