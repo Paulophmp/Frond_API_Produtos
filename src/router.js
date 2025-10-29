@@ -14,16 +14,6 @@ const routes = [
     name: 'CadastrarProduto',
     component: () => import(/* webpackChunkName: "notas" */ './produto/views/CadastrarProduto'),
   },
-  // {
-  //   path: '/login-again',
-  //   name: 'login-again',
-  //   component: () => import(/* webpackChunkName: "LoginAgain" */ './produto/views/LoginAgain.vue'),
-  // },
-  // {
-  //   path: '/produto/notas-by-user',
-  //   name: 'notas-by-user',
-  //   component: () => import(/* webpackChunkName: "NotasByUser" */ './produto/views/NotasByUser.vue'),
-  // },
   {
     path: '/pedidos',
     name: 'ListarPedidos',
