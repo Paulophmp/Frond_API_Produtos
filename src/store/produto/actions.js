@@ -26,7 +26,5 @@ export const cadastrarProdutosAction = async ({ commit }, params) => {
       const { data } = response;
       commit(types.SYNC_CADASTRAR_PRODUTO, data);
     }).catch((e) => {
-      // console.log(e)
-      // throw new TypeError(e, 'error', 10);
     });
 };
